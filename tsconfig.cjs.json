@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "module": "CommonJs",
+      "outDir": "./lib/cjs",
+    },
+    "exclude": [
+      "./src/index.mjs.ts"
+    ]
+  }

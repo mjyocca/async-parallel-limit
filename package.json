@@ -1,0 +1,30 @@
+{
+  "name": "@mjyocca/async-parallel-limit",
+  "version": "1.0.0",
+  "description": "Limits the amount of concurrent asynchronous operations that can run at a given time.",
+  "main": "./lib/cjs/index.cjs.js",
+  "module": "./lib/esm/index.mjs.js",
+  "exports": {
+    "import": "./lib/cjs/index.cjs.js",
+    "require": "./lib/esm/index.mjs.js"
+  },
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "tsc-start": "tsc --w",
+    "tsc-build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
+    "prepublishOnly": "npm run tsc-build"
+  },
+  "keywords": [
+    "async",
+    "parallel",
+    "concurrent",
+    "timeslimit"
+  ],
+  "author": "Michael Yocca @mjyocca",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  }
+}
