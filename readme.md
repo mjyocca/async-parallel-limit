@@ -1,39 +1,80 @@
 
 
-<!-- [![Latest Stable Version](https://img.shields.io/npm/v/sfdx-deploy-webpack-plugin.svg)](https://www.npmjs.com/package/sfdx-deploy-webpack-plugin)
-[![NPM Downloads](https://img.shields.io/npm/dm/sfdx-deploy-webpack-plugin.svg)](https://www.npmjs.com/package/sfdx-deploy-webpack-plugin)
-[![License](https://img.shields.io/github/license/mjyocca/sfdx-deploy-webpack-plugin.svg)](https://github.com/mjyocca/sfdx-deploy-webpack-plugin) -->
+[![Latest Stable Version](https://img.shields.io/npm/v/@mjyocca/async-parallel-limit.svg)](https://www.npmjs.com/package/sfdx-deploy-webpack-plugin)
+[![NPM Downloads](https://img.shields.io/npm/dm/sfdx-deploy-webpack-plugin.svg)](https://www.npmjs.com/package/@mjyocca/async-parallel-limit)
+[![License](https://img.shields.io/github/license/mjyocca/async-parallel-limit.svg)](https://github.com/mjyocca/async-parallel-limit)
 
 
 # async-parallel-limit
 
-Limits the amount of concurrent asynchronous operations that can run at a given time. Inspired by async's asyncTimesLimit.
+Limits the amount of asynchronous operations running in parallel at a given time with a provided callback interface. 
 
-Instead of chunking a batch of promises and awaiting for each chunk to all resolve, once one promise resolves, adds the next one to the queue so there is always a constant amount of asynchronous tasks running.
+*Inspired by async's asyncTimesLimit*.
 
-### Arguments
+Instead of queueing up an array of asynchronous tasks to run in parallel such as `await Promise.all([...]);`, 
+
+&&
+
+Instead of queueing those promises in a form of a batch and waiting for all promises in the batch to resolve before processing the next batch,
+`async-parallel-limit`, will queue up the next promise once one in the existing processing queue resolves.
 
 
+<!-- 
+Instead of chunking a batch of promises and waiting for each chunk to ***all*** resolve (Promise.all([...])), once one promise resolves, it adds the next promise to the queue so there is always a constant amount of asynchronous tasks running. -->
+
+
+#### Visualized
+
+Example => **12** tasks, limit of **3** in parallel
+
+<img align="center" src="https://github.com/mjyocca/async-parallel-limit/parallel.gif" />
+
+
+### Install via npm
+
+```bash
+npm i --save @mjyocca/async-parallel-limit
+```
+
+
+<h3>Arguments</h2>
+
+|    Param     |        Type       |                                                           
+| :---------:  | :--------------:  |
+|   tasks      | `{Array/number}`  |                                        
+|    limit     | `{number}`         | 
+|   iteratee   | `{Async Function}`   |
+
+
+```js
+import asyncParallel from '@mjyocca/async-parallel-limit';
+
+// Process 20 total async tasks with a limit of 5 at time
+await asyncParallel(20, 5, async (n, next) => {
+    // processing
+    next();
+})
+```
 
 ### Module Support
 
 #### ESM
 
 ```js
-import asyncTimesLimit from 'async-parallel-limit';
+import asyncTimesLimit from '@mjyocca/async-parallel-limit';
 ```
 
-#### Commonjs
+#### CommonJs
 
 ```js
-const asyncTimesLimit = require('async-parallel-limit');
+const asyncTimesLimit = require('@mjyocca/async-parallel-limit');
 ```
 
 
-## Example 1
+### Example 1
 
 ```js
-import asyncTimesLimit from 'async-parallel-limit'
+import asyncTimesLimit from '@mjyocca/async-parallel-limit'
 
 (async () => {
 
@@ -59,10 +100,10 @@ import asyncTimesLimit from 'async-parallel-limit'
 ```
 
 
-## Example 2
+### Example 2
 
 ```js
-import asyncTimesLimit from 'async-parallel-limit'
+import asyncTimesLimit from '@mjyocca/async-parallel-limit'
 
 (async () => {
 
