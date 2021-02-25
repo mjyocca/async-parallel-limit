@@ -1,6 +1,6 @@
 {
   "name": "@mjyocca/async-parallel-limit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Limits the amount of concurrent asynchronous operations that can run at a given time.",
   "main": "./lib/cjs/index.cjs.js",
   "module": "./lib/esm/index.mjs.js",
