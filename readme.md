@@ -27,7 +27,7 @@ Instead of chunking a batch of promises and waiting for each chunk to ***all*** 
 
 Example => **12** tasks, limit of **3** in parallel
 
-<img align="center" src="https://github.com/mjyocca/async-parallel-limit/parallel.gif" />
+<img align="center" src="https://github.com/mjyocca/async-parallel-limit/blob/main/parallel.gif" />
 
 
 ### Install via npm
