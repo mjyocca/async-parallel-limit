@@ -1,7 +1,7 @@
 
 
-[![Latest Stable Version](https://img.shields.io/npm/v/@mjyocca/async-parallel-limit.svg)](https://www.npmjs.com/package/sfdx-deploy-webpack-plugin)
-[![NPM Downloads](https://img.shields.io/npm/dm/sfdx-deploy-webpack-plugin.svg)](https://www.npmjs.com/package/@mjyocca/async-parallel-limit)
+[![Latest Stable Version](https://img.shields.io/npm/v/@mjyocca/async-parallel-limit.svg)](https://www.npmjs.com/package/@mjyocca/async-parallel-limit))
+[![NPM Downloads](https://img.shields.io/npm/dm/@mjyocca/async-parallel-limit.svg)](https://www.npmjs.com/package/@mjyocca/async-parallel-limit)
 [![License](https://img.shields.io/github/license/mjyocca/async-parallel-limit.svg)](https://github.com/mjyocca/async-parallel-limit)
 
 
