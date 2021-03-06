@@ -5,8 +5,8 @@
   "main": "./lib/cjs/index.cjs.js",
   "module": "./lib/esm/index.mjs.js",
   "exports": {
-    "import": "./lib/cjs/index.cjs.js",
-    "require": "./lib/esm/index.mjs.js"
+    "import": "./lib/esm/index.mjs.js",
+    "require": "./lib/cjs/index.cjs.js"
   },
   "files": [
     "lib/"
